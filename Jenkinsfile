@@ -11,8 +11,7 @@ pipeline {
     options {
         timeout(time: 1, unit: 'HOURS')
         disableConcurrentBuilds()
-        ansiColour('xterm')
-    }
+       }
     parameters {
         string(name: 'version', defaultValue: '', description: 'what is the artifact version?')
         string(name: 'environment', defaultValue: 'dev', description: 'what is the environment ?')
