@@ -22,3 +22,9 @@ variable "environment" {
 variable "zone_name" {
   default = "saidev.online"
 }
+
+variable "app_version" {
+  
+}
+
+

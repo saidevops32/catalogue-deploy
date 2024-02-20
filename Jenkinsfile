@@ -18,11 +18,19 @@ pipeline {
     }
     // build
     stages {
-        stage('get the version') {
+        stage('print the version') {
             steps {
                 sh """
                     echo "version: ${params.version}"
                     echo "environment: ${params.environment}"
+                """
+            }
+        }
+        stage('init') {
+            steps {
+                sh """
+                    cd terraform
+                    terraform init --backend-config=${params.environment}/backend.tf -reconfigure
                 """
             }
         }
